@@ -11,7 +11,7 @@ pipeline:
   release:
     image: plugins/github-release
     secrets: [ github_token ]
-    files: ./dist
+    files: ./dist/*
     checksum:
       - md5
       - sha1
