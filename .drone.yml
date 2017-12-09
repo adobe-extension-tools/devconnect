@@ -8,6 +8,17 @@ pipeline:
       - rsync -q -avrc --delete --exclude "/node_modules" -e "$SSH_COMMAND" . vagrant@192.168.33.10:/Users/vagrant/devconnect
       - eval "$SSH_COMMAND vagrant@192.168.33.10 /Users/vagrant/devconnect/ci.sh"
       - rsync -q -avrc -e "$SSH_COMMAND" vagrant@192.168.33.10:/Users/vagrant/devconnect/dist ./dist
+  release:
+    image: plugins/github-release
+    secrets: [ github_token ]
+    files: dist/*
+    checksum:
+      - md5
+      - sha1
+      - sha256
+      - sha512
+      - adler32
+      - crc32
   notify:
     image: plugins/slack
     channel: dev
