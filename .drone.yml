@@ -19,6 +19,8 @@ pipeline:
       - sha512
       - adler32
       - crc32
+    when:
+      event: tag
   notify:
     image: plugins/slack
     channel: dev
