@@ -1,4 +1,10 @@
-# cep-starter
+# devconnect
+
+[![Build Status](https://aedtci.mtmograph.com/api/badges/adobe-extension-tools/devconnect/status.svg)](https://aedtci.mtmograph.com/adobe-extension-tools/devconnect)
+
+CEP extension that starts a http server and evaluates incoming requests into the ExtendScript runtime.
+
+This is going to be used by the `extendscript-bundler` project so that we have a simple & sane way to evaluate ExtendScript code in all the Adobe programs.
 
 ## requirements
 
@@ -19,8 +25,8 @@ brew install makensis
 ## install
 
 ```shell
-git clone git@github.com:adobe-extension-tools/cep-starter.git
-cd cep-starter
+git clone git@github.com:adobe-extension-tools/devconnect.git
+cd devconnect
 npm install
 ```
 
