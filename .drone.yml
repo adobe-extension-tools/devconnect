@@ -1,0 +1,15 @@
+pipeline:
+  build:
+    image: vespakoen/ssh-rsync
+    volumes:
+      - /root/.vagrant.d/insecure_private_key:/vagrant_key
+    commands:
+      - export SSH_COMMAND="ssh -o Compression=yes -o DSAAuthentication=yes -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -o IdentitiesOnly=yes -i /vagrant_key"
+      - rsync -q -avrc --delete --exclude "/node_modules" -e "$SSH_COMMAND" . vagrant@192.168.33.10:/Users/vagrant/devconnect
+      - eval "$SSH_COMMAND vagrant@192.168.33.10 'cd /Users/vagrant/devconnect && npm install && npm run package'"
+  notify:
+    image: plugins/slack
+    channel: dev
+    secrets: [ slack_webhook ]
+    when:
+      status: [ success, failure ]

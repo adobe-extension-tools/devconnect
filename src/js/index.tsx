@@ -1,13 +1,12 @@
 /// <reference path="./index.d.ts" />
 
-import 'babel-polyfill'
+// import 'babel-polyfill'
 import * as React from 'react'
 import * as ReactDOM from 'react-dom'
 import { AppContainer} from 'react-hot-loader'
 import App from './components/App'
-import getStore from './redux/getStore'
-import { Provider } from 'react-redux'
-import './browserShim'
+
+const http = window.nodeRequire('http')
 
 window.localStorage.debug = '*'
 
@@ -23,20 +22,10 @@ declare global {
   }
 }
 
-function evalJsx(code: string): Promise<void> {
+function evalJsx(code: string): Promise<string> {
   return new Promise(resolve => {
-    window.__adobe_cep__.evalScript(code, () => resolve())
+    window.__adobe_cep__.evalScript(code, (result: string) => resolve(result))
   })
-}
-
-function loadJsx(): void {
-  // this require is needed for the brfs module
-  const fs = require('fs')
-  // this fs.readFileSync will be replaced with the contents of the bundle file by brfs
-  // the JSX_BUNDLE_PATH environment variable is provided by the bundler
-  // will be replaced with the actual value by the envify module
-  const contents = fs.readFileSync(process.env.JSX_BUNDLE_PATH, 'utf8')
-  evalJsx(contents)
 }
 
 function getAppEl() {
@@ -52,13 +41,46 @@ function getAppEl() {
   return appEl
 }
 
-loadJsx()
+const server = http.createServer((req, res) => {
+  const { method, url } = req
+  let body: string = ''
+  req.on('data', (chunk) => {
+    body += chunk.toString()
+  })
+  .on('end', () => {   
+    try {
+      const parsedBody = JSON.parse(body)
+      console.log(parsedBody)
+      if (parsedBody.jsx) {
+        evalJsx(parsedBody.jsx)
+          .then((jsxRes) => {
+            res.writeHead(200, {
+              'Content-Type': 'application/json'
+            })
+            res.end(JSON.stringify({
+              result: jsxRes
+            }))
+          })
+      }
+    } catch (err) {
+      res.writeHead(500, {
+        'Content-Type': 'application/json'
+      })
+      res.end()
+    }
+  })
+})
+server.listen(8080)
+
+if (module && module.hot) {
+  module.hot.onUpdate(() => {
+    server.close()
+  })
+}
 
 ReactDOM.render(
   <AppContainer>
-    <Provider store={getStore()}>
-      <App />
-    </Provider>
+    <App />
   </AppContainer>,
   getAppEl()
 )

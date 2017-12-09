@@ -1,6 +1,6 @@
-const name = 'CEP Tools Demo'
-const bundleId = 'com.ceptools.demo'
-const version = '1.0.0'
+const name = 'Dev Connect'
+const bundleId = 'com.aedt.devconnect'
+const version = '0.0.1'
 
 module.exports = {
   bundler: {
@@ -21,10 +21,76 @@ module.exports = {
       version: version,
       apps: [
         {
-          id: 'AEFT',
+          id: 'PHSP',
           from: '1.0',
           to: '99.9',
           port: '4001'
+        },
+        {
+          id: 'IDSN',
+          from: '1.0',
+          to: '99.9',
+          port: '4002'
+        },
+        {
+          id: 'AICY',
+          from: '1.0',
+          to: '99.9',
+          port: '4002'
+        },
+        {
+          id: 'ILST',
+          from: '1.0',
+          to: '99.9',
+          port: '4003'
+        },
+        {
+          id: 'PPRO',
+          from: '1.0',
+          to: '99.9',
+          port: '4004'
+        },
+        {
+          id: 'PRLD',
+          from: '1.0',
+          to: '99.9',
+          port: '4005'
+        },
+        {
+          id: 'AEFT',
+          from: '1.0',
+          to: '99.9',
+          port: '4006'
+        },
+        {
+          id: 'FLPR',
+          from: '1.0',
+          to: '99.9',
+          port: '4007'
+        },
+        {
+          id: 'AUDT',
+          from: '1.0',
+          to: '99.9',
+          port: '4008'
+        },
+        {
+          id: 'DRWV',
+          from: '1.0',
+          to: '99.9',
+          port: '4009'
+        },
+        {
+          id: 'MUSE',
+          from: '1.0',
+          to: '99.9',
+          port: '4010'
+        },
+        {
+          id: 'KBRG',
+          from: '1.0',
+          to: '99.9',
+          port: '4011'
         }
       ]
     }
@@ -44,11 +110,11 @@ module.exports = {
       // keychain: '',
       // keychainPassword: '',
       identifier: '',
-      resources: `${__dirname}/node_modules/cep-bundler/resources/macos`
+      resources: `${__dirname}/node_modules/cep-packager/resources/macos`
     },
     windows: {
       dest: `${__dirname}/dist/${version}.exe`,
-      resources: `${__dirname}/node_modules/cep-bundler/resources/windows`
+      resources: `${__dirname}/node_modules/cep-packager/resources/windows`
     },
     paths: {
       // cwd: __dirname + '/work'
