@@ -1,6 +1,6 @@
 const name = 'Dev Connect'
 const bundleId = 'com.aedt.devconnect'
-const version = '0.0.1'
+const version = require('./package.json').version
 
 module.exports = {
   bundler: {
