@@ -7,7 +7,7 @@ pipeline:
       - export SSH_COMMAND="ssh -o Compression=yes -o DSAAuthentication=yes -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -o IdentitiesOnly=yes -i /vagrant_key"
       - rsync -q -avrc --delete --exclude "/node_modules" -e "$SSH_COMMAND" . vagrant@192.168.33.10:/Users/vagrant/devconnect
       - eval "$SSH_COMMAND vagrant@192.168.33.10 /Users/vagrant/devconnect/ci.sh"
-      - rsync -q -avrc -e "$SSH_COMMAND" vagrant@192.168.33.10:/Users/vagrant/devconnect/dist dist
+      - rsync -q -avrc -e "$SSH_COMMAND vagrant@192.168.33.10:/Users/vagrant/devconnect/dist dist"
   notify:
     image: plugins/slack
     channel: dev
