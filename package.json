@@ -1,6 +1,6 @@
 {
   "name": "devconnect",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "CEP extension that starts a http server and evals incoming requests into the ExtendScript environment",
   "main": "index.js",
   "dependencies": {},
