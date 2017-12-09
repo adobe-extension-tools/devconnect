@@ -6,6 +6,8 @@ CEP extension that starts a http server and evaluates incoming requests into the
 
 This is going to be used by the `extendscript-bundler` project so that we have a simple & sane way to evaluate ExtendScript code in all the Adobe programs without having to mess with AppleScripts or VBScripts.
 
+Get the latest version on the [releases page](https://github.com/adobe-extension-tools/devconnect/releases)
+
 ## requirements
 
 **For developing:**
