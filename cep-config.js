@@ -109,7 +109,7 @@ module.exports = {
       dest: `${__dirname}/dist/${version}.pkg`,
       // keychain: '',
       // keychainPassword: '',
-      identifier: '',
+      identifier: 'Developer ID Installer: Matt Jylkka',
       resources: `${__dirname}/node_modules/cep-packager/resources/macos`
     },
     windows: {
