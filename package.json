@@ -10,7 +10,6 @@
     "@types/react": "^16.0.9",
     "@types/react-dom": "^16.0.0",
     "@types/react-hot-loader": "^3.0.4",
-    "aftereffects.d.ts": "git+https://github.com/vespakoen/aftereffects.d.ts.git",
     "debug": "^3.0.1",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
