@@ -108,7 +108,7 @@ module.exports = {
     macOs: {
       dest: `${__dirname}/dist/${version}.pkg`,
       // keychain: '',
-      // keychainPassword: '',
+      keychainPassword: process.env.KEYCHAIN_PASSWORD,
       identifier: 'Developer ID Installer: Matt Jylkka',
       resources: `${__dirname}/node_modules/cep-packager/resources/macos`
     },
