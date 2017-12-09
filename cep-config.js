@@ -21,6 +21,12 @@ module.exports = {
       version: version,
       apps: [
         {
+          id: 'PHXS',
+          from: '1.0',
+          to: '99.9',
+          port: '4000'
+        },
+        {
           id: 'PHSP',
           from: '1.0',
           to: '99.9',

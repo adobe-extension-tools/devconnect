@@ -1,6 +1,6 @@
 {
   "name": "devconnect",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "CEP extension that starts a http server and evals incoming requests into the ExtendScript environment",
   "main": "index.js",
   "dependencies": {},
@@ -15,8 +15,8 @@
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-hot-loader": "^3.0.0-beta.7",
-    "cep-bundler": "^0.0.6",
-    "cep-packager": "^0.0.6"
+    "cep-bundler": "^0.0.7",
+    "cep-packager": "^0.0.7"
   },
   "scripts": {
     "start": "cep-bundler",
