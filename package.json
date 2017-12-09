@@ -1,7 +1,7 @@
 {
-  "name": "cep-starter",
-  "version": "0.0.2",
-  "description": "A starter project for developing CEP extensions using cep-bundler and cep-packager",
+  "name": "devconnect",
+  "version": "0.0.1",
+  "description": "CEP extension that starts a http server and evals incoming requests into the ExtendScript environment",
   "main": "index.js",
   "dependencies": {},
   "devDependencies": {
@@ -10,21 +10,12 @@
     "@types/react": "^16.0.9",
     "@types/react-dom": "^16.0.0",
     "@types/react-hot-loader": "^3.0.4",
-    "@types/react-redux": "^5.0.10",
-    "@types/remote-redux-devtools": "^0.5.0",
     "aftereffects.d.ts": "git+https://github.com/vespakoen/aftereffects.d.ts.git",
-    "babel-polyfill": "^6.26.0",
     "debug": "^3.0.1",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-hot-loader": "^3.0.0-beta.7",
-    "react-redux": "^5.0.6",
-    "redux": "^3.7.2",
-    "redux-simple-logger": "0.0.4",
-    "redux-thunk": "^2.2.0",
-    "remote-redux-devtools": "^0.5.12",
-    "typescript": "^2.6.2",
-    "cep-bundler": "^0.0.3",
+    "cep-bundler": "^0.0.4",
     "cep-packager": "^0.0.2"
   },
   "scripts": {
