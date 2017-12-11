@@ -116,11 +116,11 @@ module.exports = {
       // keychain: '',
       keychainPassword: process.env.KEYCHAIN_PASSWORD,
       identifier: 'Developer ID Installer: Matt Jylkka',
-      resources: `${__dirname}/node_modules/cep-packager/resources/macos`
+      resources: `${__dirname}/resources/macos`
     },
     windows: {
       dest: `${__dirname}/dist/${version}.exe`,
-      resources: `${__dirname}/node_modules/cep-packager/resources/windows`
+      resources: `${__dirname}/resources/windows`
     },
     paths: {
       // cwd: __dirname + '/work'

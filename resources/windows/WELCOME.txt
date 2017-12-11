@@ -1,0 +1,1 @@
+Welcome to the Dev Connect installer. After installing this extension you can find it in all Adobe CC applications under "Window -> Extensions -> Dev Connect". Enjoy!
